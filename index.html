@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabacaria Los 13</title>
+    <meta name="description" content="Free open source Tailwind CSS Store template">
+    <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic">
+
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <!--Replace with your tailwind.css once created-->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
+
+    <style>
+        .worksans {
+            font-family: 'Work Sans', sans-serif;
+        }
+                
+        #menu-toggle:checked + #menu {
+            display: block;
+        }
+        
+        .hover\:grow {
+            transition: all 0.3s;
+            transform: scale(1);
+        }
+        
+        .hover\:grow:hover {
+            transform: scale(1.02);
+        }
+        
+        .carousel-open:checked + .carousel-item {
+            position: static;
+            opacity: 100;
+        }
+        
+        .carousel-item {
+            -webkit-transition: opacity 0.6s ease-out;
+            transition: opacity 0.6s ease-out;
+        }
+        
+        #carousel-1:checked ~ .control-1,
+        #carousel-2:checked ~ .control-2{
+            display: block;
+        }
+        
+        .carousel-indicators {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            bottom: 2%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+        #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet{
+            color: #000;
+            /*Set to match the Tailwind colour you want the active one to be */
+        }
+    </style>
+
+</head>
+
+<body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
+
+    <!--Nav-->
+    <nav id="header" class="w-full z-30 top-0 py-1">
+        <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
+
+            <label for="menu-toggle" class="cursor-pointer md:hidden block">
+                <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <title>menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                </svg>
+            </label>
+            <input class="hidden" type="checkbox" id="menu-toggle" />
+
+            <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
+                <nav>
+                    <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
+                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#products">Produtos</a></li>
+                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#about">Sobre</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="order-1 md:order-2">
+                <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
+                    LOS 13
+                </a>
+            </div>
+
+            <div class="order-2 md:order-3 flex items-center" id="nav-content">
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="carousel relative container mx-auto" style="max-width:1600px;">
+        <div class="carousel-inner relative overflow-hidden w-full">
+            <!--Slide 1-->
+            <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+            <div class="carousel-item absolute opacity-0" style="height:50vh;">
+                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('https://bemboladobrasil.com.br/wp-content/uploads/2019/04/foto-divulgacao-BB-caranova-1-1.jpg');">
+                </div>
+            </div>
+            <label for="carousel-2" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+            <label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+            <!--Slide 2-->
+            <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+            <div class="carousel-item absolute opacity-0 bg-cover bg-right" style="height:50vh;">
+                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('http://pngimg.com/uploads/tobacco/tobacco_PNG26.png');">
+
+                </div>
+            </div>
+            <label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+            <label for="carousel-1" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+            <!-- Add additional indicators for each slide-->
+            <ol class="carousel-indicators">
+                <li class="inline-block mr-3">
+                    <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
+                </li>
+                <li class="inline-block mr-3">
+                    <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
+                </li>
+            </ol>
+
+        </div>
+    </div>
+
+    <!--	 
+Alternatively if you want to just have a single hero
+<section class="w-full mx-auto bg-nordic-gray-light flex pt-12 md:pt-0 md:items-center bg-cover bg-right" style="max-width:1600px; height: 32rem; background-image: url('https://images.unsplash.com/photo-1422190441165-ec2956dc9ecc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80');">
+	<div class="container mx-auto">
+		<div class="flex flex-col w-full lg:w-1/2 justify-center items-start  px-6 tracking-wide">
+			<h1 class="text-black text-2xl my-4">Stripy Zig Zag Jigsaw Pillow and Duvet Set</h1>
+			<a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">products</a>
+		</div>
+	  </div>
+</section>
+-->
+
+    <section class="bg-white py-8">
+
+        <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
+
+            <nav id="store" class="w-full z-30 top-0 px-6 py-1">
+                <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
+
+                    <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
+				Produtos
+			</a>
+            </nav>
+
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col" id="products">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="http://d26lpennugtm8s.cloudfront.net/stores/001/179/965/products/1c02a6e2-9ffa-4487-9e1b-a8fed683fac5_nube-b4dcf3b163be0dc1ac15926127540455-640-0.jpg">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">Zomo Natural Perfect</p>
+                    </div>
+                    <p class="pt-1 text-gray-900">R$3,00</p>
+                </a>
+            </div>
+
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="https://w1.ezcdn.com.br/madrugashop/fotos/grande/72850fg1/seda-zomo-slim-king-size-un.jpg">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">Zomo Slim</p>
+                    </div>
+                    <p class="pt-1 text-gray-900">R$3,00</p>
+                </a>
+            </div>
+
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="https://images.tcdn.com.br/img/img_prod/784691/seda_bros_king_size_regular_66_rosa_337_1_20200622095158.jpg">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">Bros Rolling Paper Pink</p>
+                    </div>
+                    <p class="pt-1 text-gray-900">R$5,00</p>
+                </a>
+            </div>
+
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="https://popeyetabacaria.com/loja/wp-content/uploads/2020/09/products-paypay-alfafa.jpg">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">Pay-Pay GoGreen</p>
+                    </div>
+                    <p class="pt-1 text-gray-900">R$6,00</p>
+                </a>
+            </div>
+
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="https://cdn.awsli.com.br/600x450/1258/1258027/produto/61733194/ed01fd04f0.jpg">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">King Blunt Chocolate</p>
+                    </div>
+                    <p class="pt-1 text-gray-900">R$6,00</p>
+                </a>
+            </div>
+
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="https://http2.mlstatic.com/D_NQ_NP_778386-MLB42668524582_072020-W.jpg">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">Essências Zomo</p>
+                    </div>
+                    <p class="pt-1 text-gray-900">R$12,00</p>
+                </a>
+            </div>
+
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="https://images.tcdn.com.br/img/editor/up/553162/madeeira.jpg">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">Dichavador de Madeira</p>
+                    </div>
+                    <p class="pt-1 text-gray-900">R$26,00</p>
+                </a>
+            </div>
+
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="https://images.tcdn.com.br/img/img_prod/855347/cuia_de_silicone_8142_1_20200822205513.png">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">Cuias de Silicone</p>
+                    </div>
+                    <p class="pt-1 text-gray-900">R$15,00</p>
+                </a>
+            </div>
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="https://images.tcdn.com.br/img/img_prod/693228/piteira_yellow_finger_double_cotton_unidade_1537_1_20200317170711.jpg">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">Piteiras Yellow Finger</p>
+                    </div>
+                    <p class="pt-1 text-gray-900">R$6,00</p>
+                </a>
+            </div>
+
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="https://ae01.alicdn.com/kf/H5d093065e35f41d1841717ad990008af4/Bandeja-met-lica-para-enrolar-tabaco-bandeja-recipiente-para-cigarro-ervas-daninhas-recipiente-para-fumo-bob.jpg_q50.jpg">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">Bandeijas Metalicas</p>
+                    </div>
+                    <p class="pt-1 text-gray-900">£9.99</p>
+                </a>
+            </div>
+
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="https://images.tcdn.com.br/img/img_prod/693228/kit_5_piteiras_de_murano_yellow_finger_823_1_20190605104742.jpg">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">Piteira de Murano</p>
+                    </div>
+                    <p class="pt-1 text-gray-900">£9.99</p>
+                </a>
+            </div>
+
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="https://popeyetabacaria.com/loja/wp-content/uploads/2020/09/products-isqueiro-ocb-grande-sortido.jpg">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">Isqueiros OCB</p>
+                    </div>
+                    <p class="pt-1 text-gray-900">£9.99</p>
+                </a>
+            </div>
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="https://cdn.awsli.com.br/600x450/931/931061/produto/38185567/8ddfda50d5.jpg">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">Slicks de Silicone P/G</p>
+                    </div>
+                    <p class="pt-1 text-gray-900">R$6,00</p>
+                </a>
+            </div>
+
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="https://www.tabacanasmokingshop.com/wp-content/uploads/2015/09/Grinder_metal_thebulldog.png">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">Dichavador de Metal</p>
+                    </div>
+                    <p class="pt-1 text-gray-900">£9.99</p>
+                </a>
+            </div>
+
+
+            </div>
+
+    </section>
+
+    <section class="bg-white py-8">
+
+        <div class="container py-8 px-6 mx-auto" id="about">
+
+            <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mb-8" href="#">
+			About
+		</a>
+
+            <p class="mt-8 mb-8">This template is inspired by the stunning nordic minamalist design - in particular:
+                <br>
+                <a class="text-gray-800 underline hover:text-gray-900" href="http://savoy.nordicmade.com/" target="_blank">Savoy Theme</a> created by <a class="text-gray-800 underline hover:text-gray-900" href="https://nordicmade.com/">https://nordicmade.com/</a> and <a class="text-gray-800 underline hover:text-gray-900" href="https://www.metricdesign.no/" target="_blank">https://www.metricdesign.no/</a></p>
+
+            <p class="mb-8">Lorem ipsum dolor sit amet, consectetur <a href="#">random link</a> adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Vitae aliquet nec ullamcorper sit. Nullam eget felis eget nunc lobortis mattis aliquam. In est ante in nibh mauris. Egestas congue quisque egestas diam in. Facilisi nullam vehicula ipsum a arcu. Nec nam aliquam sem et tortor consequat. Eget mi proin sed libero enim sed faucibus turpis in. Hac habitasse platea dictumst quisque. In aliquam sem fringilla ut. Gravida rutrum quisque non tellus orci ac auctor augue mauris. Accumsan lacus vel facilisis volutpat est velit egestas dui id. At tempor commodo ullamcorper a. Volutpat commodo sed egestas egestas fringilla. Vitae congue eu consequat ac.</p>
+
+        </div>
+
+    </section>
+
+    <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
+        <div class="container flex px-3 py-8 ">
+            <div class="w-full mx-auto flex flex-wrap">
+                <div class="flex w-full lg:w-1/2 ">
+                    <div class="px-3 md:px-0">
+                        <h3 class="font-bold text-gray-900">About</h3>
+                        <p class="py-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel mi ut felis tempus commodo nec id erat. Suspendisse consectetur dapibus velit ut lacinia.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex w-full lg:w-1/2 lg:justify-end lg:text-right">
+                    <div class="px-3 md:px-0">
+                        <h3 class="font-bold text-gray-900">Social</h3>
+                        <ul class="list-reset items-center pt-3">
+                            <li>
+                                <a class="inline-block no-underline hover:text-black hover:underline py-1" href="#">Add social links</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
